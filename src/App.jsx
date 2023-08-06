@@ -1,21 +1,26 @@
-import { color } from '@mui/system';
-import './App.css';
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import BasicTimeline from './Component/BasicTimeline';
+import BoxSx from './Component/BoxSx';
+import { Container,Divider } from '@mui/material';
 
 function App() {
   return (
-    <Container maxWidth="sm">
-      <Grid container spacing={2}>
-      <Grid item xs={8}>
-      1234
+    <div>
+      <Grid container>
+        <Grid item xs={7}>
+          <Container>
+          <Divider>Changelogs</Divider>
+          <BoxSx/>
+          </Container>
+        </Grid>
+        <Grid item xs={5}>
+          <Container>
+          <Divider>Changelogs</Divider>
+          <BasicTimeline/>
+          </Container>
+        </Grid>
       </Grid>
-      <Grid item xs={2}>
-      <BasicTimeline/>
-      </Grid>
-      </Grid>
-    </Container>
+    </div>
   );
 }
 

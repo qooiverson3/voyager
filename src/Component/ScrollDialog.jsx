@@ -6,6 +6,11 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import GetConf from '../API/GetConf';
+import TreeView from '@mui/lab/TreeView';
+import TreeItem from '@mui/lab/TreeItem';
+import FolderIcon from '@mui/icons-material/Folder';
+import FolderOpenIcon from '@mui/icons-material/FolderOpen';
+import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
 
 export default function ScrollDialog() {
   const [open, setOpen] = React.useState(false);
@@ -32,16 +37,33 @@ export default function ScrollDialog() {
 
   return (
     <div>
-      <Button color="success" onClick={handleClickOpen('paper')}>2023.08.05.21.33.45</Button>
+      {/* <Button color="success" onClick={handleClickOpen('paper')}>2023.08.05.21.33.45</Button> */}
+      <TreeView
+      aria-label="file system navigator"
+      defaultCollapseIcon={<FolderOpenIcon fontSize="large" color='primary'/>}
+      defaultExpandIcon={<FolderIcon fontSize="large" color='primary'/>}
+      sx={{flexGrow: 1, maxWidth: 450, overflowY: 'auto' }}
+      >
+      <TreeItem nodeId="5" label="2023.08.04.12.11.35">
+
+        <div onClick={handleClickOpen('paper')}>
+          <TreeItem nodeId="10" icon={<InsertDriveFileOutlinedIcon/>} label="nginx.conf" />
+        </div>
+        <TreeItem nodeId="11" icon={<InsertDriveFileOutlinedIcon/>} label="nginx-http-extra.conf" />
+        <TreeItem nodeId="12" icon={<InsertDriveFileOutlinedIcon/>} label="nginx-upstream-extra.conf" />
+        </TreeItem>
+        </TreeView>
       <Dialog
         open={open}
         onClose={handleClose}
         scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
+        maxWidth="lg"
       >
-        <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
+        <DialogTitle id="scroll-dialog-title">nginx.conf</DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
+
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
@@ -51,8 +73,7 @@ export default function ScrollDialog() {
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Cancel</Button>
-          <Button onClick={handleClose}>Subscribe</Button>
+          <Button onClick={handleClose}>Close</Button>
         </DialogActions>
       </Dialog>
     </div>
