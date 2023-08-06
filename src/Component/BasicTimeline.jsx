@@ -46,7 +46,7 @@ export default function BasicTimeline() {
           <TimelineDot color="success">
           <CheckIcon />
           </TimelineDot>
-          <TimelineConnector />
+          <TimelineConnector sx={{ bgcolor: 'success.main' }} />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '12px', px: 2 }}>
         <Typography variant="h6" component="span">
@@ -58,8 +58,8 @@ export default function BasicTimeline() {
       <TimelineItem>
         <TimelineOppositeContent></TimelineOppositeContent>
         <TimelineSeparator>
-        <TimelineConnector />
-        <TimelineDot color="success" variant="outlined">
+        <TimelineConnector sx={{ bgcolor: 'success.main' }}/>
+        <TimelineDot color="primary" variant="outlined">
           <FmdGoodIcon color='primary'/>
           </TimelineDot>
           <TimelineConnector />
