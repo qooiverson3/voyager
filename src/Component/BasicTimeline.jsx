@@ -8,47 +8,67 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import ScrollDialog from './ScrollDialog';
 import CheckIcon from '@mui/icons-material/Check';
 import HistoryIcon from '@mui/icons-material/History';
-import WhereToVoteIcon from '@mui/icons-material/WhereToVote';
-import DoneAllIcon from '@mui/icons-material/DoneAll';
-import RadioButtonCheckedIcon from '@mui/icons-material/RadioButtonChecked';
-import FileSystemNavigator from './FileSystemNavigator';
 import TimelineOppositeContent, {
     timelineOppositeContentClasses,
   } from '@mui/lab/TimelineOppositeContent';
+import Typography from '@mui/material/Typography';
+import FmdGoodIcon from '@mui/icons-material/FmdGood';
 
 export default function BasicTimeline() {
   return (
     <Timeline
     sx={{
-        [`& .${timelineOppositeContentClasses.root}`]: {
-          flex: 0.2,
-        },
-      }}
+      [`& .${timelineOppositeContentClasses.root}`]: {
+        flex: 0.2,
+      },
+    }}
     >
+
       <TimelineItem>
+        <TimelineOppositeContent></TimelineOppositeContent>
         <TimelineSeparator>
-          <HistoryIcon color="secondary"/>
+        <TimelineConnector sx={{ bgcolor: 'gray.main' }} />
+          <TimelineDot>
+          <HistoryIcon/>
+          </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Previous
-        <FileSystemNavigator/>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+        <Typography variant="h6">Previous
+          <ScrollDialog/>
+          </Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
+        <TimelineOppositeContent></TimelineOppositeContent>
         <TimelineSeparator>
-          <DoneAllIcon color='success'/>
+        <TimelineConnector />
+          <TimelineDot color="success">
+          <CheckIcon />
+          </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Change
-        <FileSystemNavigator/>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+        <Typography variant="h6" component="span">
+          Change
+        <ScrollDialog/>
+        </Typography>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
+        <TimelineOppositeContent></TimelineOppositeContent>
         <TimelineSeparator>
-          <RadioButtonCheckedIcon />
+        <TimelineConnector />
+        <TimelineDot color="success" variant="outlined">
+          <FmdGoodIcon color='primary'/>
+          </TimelineDot>
+          <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent>Current
-        <FileSystemNavigator/>
+        <TimelineContent sx={{ py: '12px', px: 2 }}>
+        <Typography variant="h6" component="span">
+          Current
+        <ScrollDialog/>
+        </Typography>
         </TimelineContent>
       </TimelineItem>
     </Timeline>
