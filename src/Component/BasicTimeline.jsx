@@ -68,7 +68,7 @@ export default function BasicTimeline() {
           <TimelineConnector />
         </TimelineSeparator>
         <TimelineContent sx={{ py: '18px', px: 3 }}>
-        <Typography variant="overline" component="span">
+        <Typography variant="overline" component="span" sx={{fontSize: 15}}>
           Current
         </Typography>
 
