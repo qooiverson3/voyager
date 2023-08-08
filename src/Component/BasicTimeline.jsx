@@ -13,6 +13,8 @@ import TimelineOppositeContent, {
   } from '@mui/lab/TimelineOppositeContent';
 import Typography from '@mui/material/Typography';
 import FmdGoodIcon from '@mui/icons-material/FmdGood';
+// import "@fontsource/open-sans"; // Defaults to weight 400.
+// import "@fontsource/open-sans/500.css"; // Weight 500.
 
 export default function BasicTimeline() {
   return (
@@ -33,10 +35,10 @@ export default function BasicTimeline() {
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-        <Typography variant="h6">Previous
-          <ScrollDialog/>
+        <TimelineContent sx={{ py: '18px', px: 3 }}>
+        <Typography variant="overline" component="span">Previous
           </Typography>
+          <ScrollDialog/>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
@@ -48,27 +50,29 @@ export default function BasicTimeline() {
           </TimelineDot>
           <TimelineConnector sx={{ bgcolor: 'success.main' }} />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-        <Typography variant="h6" component="span">
+        <TimelineContent sx={{ py: '18px', px: 3 }}>
+        <Typography variant="overline" component="span">
           Change
-        <ScrollDialog/>
+
         </Typography>
+        <ScrollDialog/>
         </TimelineContent>
       </TimelineItem>
       <TimelineItem>
         <TimelineOppositeContent></TimelineOppositeContent>
         <TimelineSeparator>
         <TimelineConnector sx={{ bgcolor: 'success.main' }}/>
-        <TimelineDot color="primary" variant="outlined">
-          <FmdGoodIcon color='primary'/>
+        <TimelineDot color="primary">
+          <FmdGoodIcon />
           </TimelineDot>
           <TimelineConnector />
         </TimelineSeparator>
-        <TimelineContent sx={{ py: '12px', px: 2 }}>
-        <Typography variant="h6" component="span">
+        <TimelineContent sx={{ py: '18px', px: 3 }}>
+        <Typography variant="overline" component="span">
           Current
-        <ScrollDialog/>
         </Typography>
+
+        <ScrollDialog/>
         </TimelineContent>
       </TimelineItem>
     </Timeline>

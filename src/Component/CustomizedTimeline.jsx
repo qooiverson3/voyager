@@ -12,7 +12,6 @@ import HotelIcon from '@mui/icons-material/Hotel';
 import RepeatIcon from '@mui/icons-material/Repeat';
 import Typography from '@mui/material/Typography';
 import ScrollDialog from './ScrollDialog';
-
 export default function CustomizedTimeline() {
   return (
     <Timeline position="alternate">

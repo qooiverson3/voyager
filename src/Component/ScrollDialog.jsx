@@ -42,7 +42,6 @@ export default function ScrollDialog() {
       aria-label="file system navigator"
       defaultCollapseIcon={<FolderOpenIcon fontSize="large" color='primary'/>}
       defaultExpandIcon={<FolderIcon fontSize="large" color='primary'/>}
-      sx={{flexGrow: 1, maxWidth: 450, overflowY: 'auto' }}
       >
       <TreeItem nodeId="5" label="2023.08.04.12.11.35">
 
