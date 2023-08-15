@@ -16,20 +16,19 @@ const commonStyles = {
 
 function App() {
   return (
-      <Grid container>
+    <Container>
+      <Grid container spacing={12}>
         <Grid item xs={7}>
-          <Container>
-          <Box sx={{ ...commonStyles, borderRadius: '15px',width: '100%', height: 700, boxShadow: 3}}/>
-
-          </Container>
+        {/* <Divider>Recently Changelog</Divider> */}
+          {/* <BasicTimeline/> */}
+        <Box sx={{ ...commonStyles, borderRadius: '15px',width: '100%', height: 700, boxShadow: 3}}/>
         </Grid>
         <Grid item xs={5}>
-          <Container>
           <Divider>Recently Changelog</Divider>
           <BasicTimeline/>
-          </Container>
         </Grid>
       </Grid>
+      </Container>
   );
 }
 
