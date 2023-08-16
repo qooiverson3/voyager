@@ -17,7 +17,7 @@ const GetConf = () => {
     fetchFileData();
   }, []);
 
-  const lines = fileContent.split('\n'); // 將文本按換行符拆分成行陣列
+  const lines = fileContent.split('\n');
   return (
     <pre>
     {lines.map((line, index) => (

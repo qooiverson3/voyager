@@ -11,6 +11,7 @@ import TreeItem from '@mui/lab/TreeItem';
 import FolderIcon from '@mui/icons-material/Folder';
 import FolderOpenIcon from '@mui/icons-material/FolderOpen';
 import InsertDriveFileOutlinedIcon from '@mui/icons-material/InsertDriveFileOutlined';
+import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 
 export default function ScrollDialog() {
   const [open, setOpen] = React.useState(false);
@@ -60,19 +61,20 @@ export default function ScrollDialog() {
         aria-describedby="scroll-dialog-description"
         maxWidth="lg"
       >
-        <DialogTitle id="scroll-dialog-title">nginx.conf</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
+        <DialogTitle id="scroll-dialog-title" sx={{fontWeight:'bold'}}>nginx.conf</DialogTitle>
+        <DialogContent dividers={scroll === 'paper'} sx={{backgroundColor:'#272727'}}>
 
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
+            sx={{color:'white'}}
           >
             <GetConf/>
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClose}>Close</Button>
+          <Button onClick={handleClose} variant="contained" endIcon={<ExitToAppIcon />}>Close</Button>
         </DialogActions>
       </Dialog>
     </div>
