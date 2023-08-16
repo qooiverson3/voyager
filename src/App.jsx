@@ -1,9 +1,14 @@
 import Grid from '@mui/material/Grid';
 import BasicTimeline from './Component/BasicTimeline';
-import BoxSx from './Component/BoxSx';
+// import BoxSx from './Component/BoxSx';
 import { Container,Divider } from '@mui/material';
 import Box from '@mui/material/Box';
-import ScrollDialog from './Component/ScrollDialog';
+// import ScrollDialog from './Component/ScrollDialog';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const commonStyles = {
   bgcolor: 'background.paper',
@@ -16,6 +21,17 @@ const commonStyles = {
 
 function App() {
   return (
+    <Box>
+      {/* <AppBar position="static">
+        <Toolbar variant="dense">
+          <IconButton edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" color="inherit" component="div">
+            Photos
+          </Typography>
+        </Toolbar>
+      </AppBar> */}
     <Container>
       <Grid container spacing={12}>
         <Grid item xs={7}>
@@ -29,6 +45,7 @@ function App() {
         </Grid>
       </Grid>
       </Container>
+      </Box>
   );
 }
 

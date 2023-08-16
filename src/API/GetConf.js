@@ -17,9 +17,16 @@ const GetConf = () => {
     fetchFileData();
   }, []);
 
+  const lines = fileContent.split('\n'); // 將文本按換行符拆分成行陣列
   return (
     <pre>
-    {fileContent}
+    {lines.map((line, index) => (
+      <span key={index}>
+        {index + 1}   {line}
+        <br />
+      </span>
+    ))}
+    {/* {fileContent} */}
     </pre>
   );
 };
