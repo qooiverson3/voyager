@@ -62,7 +62,7 @@ export default function ScrollDialog() {
         maxWidth="lg"
       >
         <DialogTitle id="scroll-dialog-title" sx={{fontWeight:'bold'}}>nginx.conf</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'} sx={{backgroundColor:'#272727'}}>
+        <DialogContent dividers={scroll === 'paper'} sx={{backgroundColor:'#4F4F4F'}}>
 
           <DialogContentText
             id="scroll-dialog-description"
