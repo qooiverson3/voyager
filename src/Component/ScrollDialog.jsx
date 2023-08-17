@@ -16,10 +16,12 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 export default function ScrollDialog() {
   const [open, setOpen] = React.useState(false);
   const [scroll, setScroll] = React.useState('paper');
+  const [file, setFile] = React.useState('');
 
-  const handleClickOpen = (scrollType) => () => {
+  const handleClickOpen = (scrollType,file) => () => {
     setOpen(true);
     setScroll(scrollType);
+    setFile(file);
   };
 
   const handleClose = () => {
@@ -44,13 +46,17 @@ export default function ScrollDialog() {
       defaultCollapseIcon={<FolderOpenIcon fontSize="large" color='primary'/>}
       defaultExpandIcon={<FolderIcon fontSize="large" color='primary'/>}
       >
-      <TreeItem nodeId="5" label="2023.08.04.12.11.35">
+      <TreeItem nodeId="5" label="2023.08.04.12.11.35" sx={{color: '#4F4F4F'}}>
 
-        <div onClick={handleClickOpen('paper')}>
+        <div onClick={handleClickOpen('paper','nginx.conf')}>
           <TreeItem nodeId="10" icon={<InsertDriveFileOutlinedIcon/>} label="nginx.conf" />
         </div>
+        <div onClick={handleClickOpen('paper','nginx-http-extra.conf')}>
         <TreeItem nodeId="11" icon={<InsertDriveFileOutlinedIcon/>} label="nginx-http-extra.conf" />
+        </div>
+        <div onClick={handleClickOpen('paper','nginx-upstream-extra.conf')}>
         <TreeItem nodeId="12" icon={<InsertDriveFileOutlinedIcon/>} label="nginx-upstream-extra.conf" />
+        </div>
         </TreeItem>
         </TreeView>
       <Dialog
@@ -61,7 +67,7 @@ export default function ScrollDialog() {
         aria-describedby="scroll-dialog-description"
         maxWidth="lg"
       >
-        <DialogTitle id="scroll-dialog-title" sx={{fontWeight:'bold'}}>nginx.conf</DialogTitle>
+        <DialogTitle id="scroll-dialog-title" sx={{fontWeight:'bold'}}>{file}</DialogTitle>
         <DialogContent dividers={scroll === 'paper'} sx={{backgroundColor:'#4F4F4F'}}>
 
           <DialogContentText
@@ -70,7 +76,7 @@ export default function ScrollDialog() {
             tabIndex={-1}
             sx={{color:'white'}}
           >
-            <GetConf/>
+            <GetConf file={file}/>
           </DialogContentText>
         </DialogContent>
         <DialogActions>

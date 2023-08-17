@@ -8,11 +8,14 @@ import './index.css';
 // import '@fontsource/roboto/500.css';
 // import '@fontsource/roboto/700.css';
 import '@fontsource/lato/300.css';
+import EchoRoot from './EchRoot';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   // <React.StrictMode>
-    <App />
+    //  <EchoRoot />
+  <App />
   // </React.StrictMode>
 );
 
